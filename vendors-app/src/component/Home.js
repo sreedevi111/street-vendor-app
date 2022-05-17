@@ -39,14 +39,15 @@
 
 import React, { useState, useRef } from "react";
 import {
- SafeAreaView,
  StyleSheet,
  View,
  TouchableOpacity,
  Text,
 } from "react-native";
+import SafeAreaView from 'react-native-safe-area-view';
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import PhoneInput from "react-native-phone-number-input";
+import sendSmsVerification from "../api/verify"
 
 const Home = ({ navigation }) => {
  const [value, setValue] = useState("");
@@ -57,31 +58,35 @@ const Home = ({ navigation }) => {
    <>
      <View style={styles.container}>
        <SafeAreaView style={styles.wrapper}>
+         <Text style = {styles.intro}>Street Vendors app</Text>
          <View style={styles.welcome}>
-           <Text>Welcome!</Text>
+           <Text>Login using mobile number</Text>
          </View>
          <PhoneInput
-           ref={phoneInput}
+          //  ref={phoneInput}
            defaultValue={value}
            defaultCode="IN"
-           layout="first"
-           onChangeText={(text) => {
-             setValue(text);
-           }}
-           onChangeFormattedText={(text) => {
-             setFormattedValue(text);
-           }}
-           countryPickerProps={{ withAlphaFilter: true }}
-           withShadow
-           autoFocus
+          //  layout="first"
+          //  onChangeText={(text) => {
+          //    setValue(text);
+          //  }}
+          //  onChangeFormattedText={(text) => {
+          //    setFormattedValue(text);
+          //  }}
+          //  countryPickerProps={{ withAlphaFilter: true }}
+          //  withShadow
+          //  autoFocus
          />
          <TouchableOpacity
            style={styles.button}
            onPress={() => {
              // TODO - send SMS!
+             sendSmsVerification(formattedValue).then((sent) => {
+              navigation.navigate("Otp", { phoneNumber: formattedValue });
+            });
            }}
          >
-           <Text style={styles.buttonText}>Sign Up</Text>
+           <Text style={styles.buttonText}>Continue</Text>
          </TouchableOpacity>
        </SafeAreaView>
      </View>
@@ -99,6 +104,10 @@ const styles = StyleSheet.create({
    flex: 1,
    justifyContent: "center",
    alignItems: "center",
+ },
+
+ intro:{
+    fontSize: 40,
  },
 
  button: {
@@ -127,13 +136,13 @@ const styles = StyleSheet.create({
    padding: 20,
  },
 
- status: {
-   padding: 20,
-   marginBottom: 20,
-   justifyContent: "center",
-   alignItems: "flex-start",
-   color: "gray",
- },
+//  status: {
+//    padding: 20,
+//    marginBottom: 20,
+//    justifyContent: "center",
+//    alignItems: "flex-start",
+//    color: "gray",
+//  },
 });
 
 export default Home;
