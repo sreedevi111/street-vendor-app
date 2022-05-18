@@ -1,20 +1,25 @@
 import { StyleSheet, Text, View, Button } from "react-native";
+import { TouchableOpacity } from "react-native-web";
 
-export default function Question() {
+
+const Question = ({navigation}) => {
   
   return (
     <View style={styles.body}>
       <Text style={styles.text}>LOCAL VENDORS</Text>
       <View style={{ marginBottom: 10,  width: 115,  }}>
-      <Button color="#0000ff" title="vendor 🛍️" />
+        <TouchableOpacity></TouchableOpacity>
+      <Button color="#0000ff" onPress={() => navigation.navigate("VendorSignUp")} title="vendor 🛍️" />
       </View>
 
-      <Button color="#0000ff" title="consumer🚹 " />
+      <Button color="#0000ff" onPress={() => navigation.navigate("ConsumerSignUp")}  title="consumer🚹 " />
  
-
+      
     </View>
   );
 }
+
+export default Question
 
 const styles = StyleSheet.create({
   body: {
