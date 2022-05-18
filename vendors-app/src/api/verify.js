@@ -27,7 +27,8 @@ const checkVerification = async (phoneNumber, code) => {
  try {
    const data = JSON.stringify({
      to: phoneNumber,
-     verification_code: code,
+    //  verification_code: code,
+    code: code,
    });
 
    const response = await fetch(`${BASE_URL}/check-verify`, {
@@ -39,6 +40,7 @@ const checkVerification = async (phoneNumber, code) => {
    });
 
    const json = await response.json();
+   console.log(json)
    return json.success;
  } catch (error) {
    console.error(error);

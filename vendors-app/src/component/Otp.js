@@ -1,10 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Button } from 'react-native'
 import React, {useState} from 'react'
 import SafeAreaView from 'react-native-safe-area-view'
 import {checkVerification} from "../api/verify"
 import OTPInputView from '@twotalltotems/react-native-otp-input'
 
+
+
 const Otp = ({route, navigation}) => {
+    const { phoneNumber } = route.params;
     const [invalidCode, setInvalidCode] = useState(false);
   return (
     <SafeAreaView style={styles.wrapper}>
