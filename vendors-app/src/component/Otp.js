@@ -17,7 +17,7 @@ const Otp = ({route, navigation}) => {
     </Text>
     <Button
       title="Edit Phone Number"
-      onPress={() => navigation.replace("PhoneNumber")}
+      onPress={() => navigation.replace("Home")}
     />
     <OTPInputView
       style={{ width: "80%", height: 200 }}

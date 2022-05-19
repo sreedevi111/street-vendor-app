@@ -6,19 +6,26 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/component/Home';
 import Otp from './src/component/Otp';
 import Gated from './src/component/Gated';
+import VendorDash1 from './src/component/VendorDash1'
+import ItemAddList from './src/component/ItemAddList';
 
 
 export default function App() {
   const Stack = createNativeStackNavigator();
   return (
-    <NavigationContainer>
+    <NavigationContainer >
+      
+      {/* <ItemAddList/> */}
+     
+      
       <Stack.Navigator initialRouteName="Home"
        screenOptions={{
          headerShown: false,
-       }}>
+       }} >
         <Stack.Screen name = "Home" component ={Home}/>
         <Stack.Screen name = "Otp" component ={Otp}/>
         <Stack.Screen name='Gated' component={Gated}/>
+        <Stack.Screen name='VendorDash1' component={VendorDash1}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

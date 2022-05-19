@@ -1,41 +1,3 @@
-// import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from 'react-native'
-// import React from 'react'
-// import PhoneInput from 'react-native-phone-number-input'
-
-// const Home = () => {
-//   return (
-//     <View style ={styles.container}>
-//       <Text style = {styles.welcome}>Street Vendor's app</Text>
-//       <SafeAreaView>
-//         <Text>Login</Text>
-//         <PhoneInput style ={styles.phonenum}>
-
-//         </PhoneInput>
-//       </SafeAreaView>
-//     </View>
-    
-//   )
-// }
-
-// export default Home
-
-// const styles = StyleSheet.create({
-//   container:{
-//     flex:1,
-//     padding: 40,
-//     alignItems: "center",
-//     alignItems: "flex-start"
-//   },
-//   welcome:{
-//     color: "blue",
-//     fontWeight: '600',
-//     fontSize: 33
-//   },
-//   phonenum:{
-//     justifyContent: "center",
-//     padding:90,
-//   }
-// })
 
 import React, { useState, useRef } from "react";
 import {
@@ -58,7 +20,7 @@ const Home = ({ navigation }) => {
    <>
      <View style={styles.container}>
        <SafeAreaView style={styles.wrapper}>
-         <Text style = {styles.intro}>Street Vendors app</Text>
+         <Text style = {styles.intro}>Street Vendors App</Text>
          <View style={styles.welcome}>
            <Text>Login using mobile number</Text>
          </View>
@@ -73,9 +35,9 @@ const Home = ({ navigation }) => {
            onChangeFormattedText={(text) => {
              setFormattedValue(text);
            }}
-           countryPickerProps={{ withAlphaFilter: true }}
-           withShadow
-           autoFocus
+          //  countryPickerProps={{ withAlphaFilter: true }}
+          //  withShadow
+          //  autoFocus
          />
          <TouchableOpacity
            style={styles.button}

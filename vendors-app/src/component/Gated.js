@@ -10,7 +10,8 @@ const Gated = ({ navigation }) => {
      </View>
      <Button
        title="Start over"
-       onPress={() => navigation.replace("PhoneNumber")}
+       onPress={() => navigation.replace("Home")}
+       //
      />
    </SafeAreaView>
  );
