@@ -20,7 +20,7 @@ export default function App() {
 
         <Stack.Screen name="ConsumerSignUp" component={ConsumerSignUp} />
       </Stack.Navigator>
-    </NavigationContainer>
+    </NavigationContainer>    
   );
 }
 

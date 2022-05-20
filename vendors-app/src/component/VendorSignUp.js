@@ -3,28 +3,30 @@ import { StyleSheet, Text, View, Button, ScrollView, Image } from "react-native"
 import CustomInput from "./CustomInput/CustomInput";
 import CustomButton from "./Customebutton/CustomButton";
 import Logo from '../../assets/Logo.png'
-
+import { Avatar } from 'react-native-paper'
+import CustomMap from "./CustomeMap/CustomMap";    
 
 const VendorSignUp = () => {
   const [fullName, setFullName] = useState("");
-  const [password, setPassword] = useState("");
+  const [city, setCity] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
-  const onSignUpPressed = () => {
-    console.warn("Sign Up");
+  const onSavePressed = () => {
+    console.warn("Data Saved");
   };
-  const onSignInGoogle = () => {
-    console.warn("Googel");
-  };
-  const onSignInFacebook = () => {
-    console.warn("Facebook");
-  };
+  // const onSignInGoogle = () => {
+  //   console.warn("Googel");
+  // };
+  // const onSignInFacebook = () => {
+  //   console.warn("Facebook");
+  // };
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    // <ScrollView showsVerticalScrollIndicator={false}>
     <View style={styles.body}>
-    <Image source={Logo} style={styles.logo} />
+    {/* <Image source={Logo} style={styles.logo} /> */}
+    <Avatar.Image source={Logo}/>
 
       <CustomInput
         placeholder="Full Name"
@@ -38,13 +40,14 @@ const VendorSignUp = () => {
         setValue={setPhoneNumber}
       />
       <CustomInput
-        placeholder="Password"
-        value={password}
-        setValue={setPassword}
-        secureTextEntry={true}
+        placeholder="Address"
+        value={city}
+        setValue={setCity}
+        // secureTextEntry={true}
       />
-      <CustomButton text="Register" onPress={onSignUpPressed} />
-      <CustomButton
+      <CustomMap />
+      <CustomButton text="Save" onPress={onSavePressed} />
+      {/* <CustomButton
         text="Sign in with Google"
         onPress={onSignInGoogle}
         bgColor="#FAE9EA"
@@ -55,9 +58,9 @@ const VendorSignUp = () => {
         onPress={onSignInFacebook}
         bgColor="#E7EAF4"
         fgColor="#4765A9"
-      />
+      /> */}
     </View>
-    </ScrollView>
+    // </ScrollView>
   );
 };
 
@@ -70,8 +73,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  logo: {
-    width: 100,
-    height: 100,
-  }
+  // logo: {
+  //   width: 100,
+  //   height: 100,
+    
+  // }
 });
