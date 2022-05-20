@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Button } from 'react-native'
 import React, {useState} from 'react'
 import SafeAreaView from 'react-native-safe-area-view'
-import {checkVerification} from "../api/verify"
+import {checkVerification} from "../../api/verify"
 import OTPInputView from '@twotalltotems/react-native-otp-input'
 
 
@@ -28,7 +28,9 @@ const Otp = ({route, navigation}) => {
       onCodeFilled={(code) => {
         checkVerification(phoneNumber, code).then((success) => {
           if (!success) setInvalidCode(true);
-          success && navigation.replace("Gated");
+
+          //check db
+          success && navigation.replace("Question");
         });
       }}
     />
