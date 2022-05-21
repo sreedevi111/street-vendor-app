@@ -1,5 +1,7 @@
 import { StyleSheet, Text, View, Button } from "react-native";
-import { TouchableOpacity } from "react-native-web";
+// import { TouchableOpacity } from "react-native-web";
+import { TouchableOpacity } from "react-native-gesture-handler";
+
 
 const Question = ({ navigation }) => {
   return (
@@ -8,7 +10,7 @@ const Question = ({ navigation }) => {
       <TouchableOpacity style={{ marginBottom: 10, width: 115 }}>
         <Button
           color="#0000ff"
-          onPress={() => navigation.navigate("VendorSignUp")}
+          onPress={() => navigation.navigate("ItemAddList")}
           title="vendor 🛍️"
         />
       </TouchableOpacity>

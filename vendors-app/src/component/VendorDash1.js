@@ -3,18 +3,22 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import SafeAreaView from 'react-native-safe-area-view'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { useNavigation } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-const VendorDash1 = () => {
+
+const VendorDash1 = ({navigation}) => {
+  
   return (
-      <>
+     
       <SafeAreaProvider style = {styles.container}>
       <Text style = {styles.title} >There are no items in list. Please add items</Text>
-        <Button st title='ADD +'>  </Button>
+        <Button onPress={()=> navigation.navigate('ItemAddList')} title='ADD +'>  </Button>
       </SafeAreaProvider>
       
      
         
-        </>
+        
   )
 }
 
@@ -27,9 +31,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    title:{
-        fontSize: '25px',
-        fontWeight: '500'
-    }
+   
 
 })
