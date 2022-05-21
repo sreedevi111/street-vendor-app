@@ -15,7 +15,7 @@ const Question = ({ navigation }) => {
       <TouchableOpacity>
         <Button
           color="#0000ff"
-          onPress={() => navigation.navigate("ConsumerSignUp")}
+          onPress={() => navigation.navigate("HomePage")}
           title="consumer🚹 "
         />
       </TouchableOpacity>

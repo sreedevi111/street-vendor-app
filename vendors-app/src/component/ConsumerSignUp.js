@@ -7,7 +7,7 @@ import {
   ScrollView,
   Image,
 } from "react-native";
-import CustomInput from "./CustomInput";
+import CustomInput from "./CustomInput/Index";
 import CustomButton from "./Customebutton/CustomButton";
 import Logo from "../../assets/Logo.png";
 import { Avatar } from "react-native-paper";
