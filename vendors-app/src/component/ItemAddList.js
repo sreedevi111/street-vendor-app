@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import CustomInput from "./CustomInput";
 import CustomButton from "./Customebutton/CustomButton";
@@ -36,16 +36,12 @@ const ItemAddList = ({ navigation }) => {
       <CustomInput placeholder="Unit" onChangeText={(val) => setUnit(val)} />
 
       <CustomInput
-      keyboardType = 'numeric'
-  
+        keyboardType="numeric"
         placeholder="Price per Unit"
         onChangeText={(val) => setPrice(val)}
       />
 
-      {/* <TouchableOpacity style={styles.round1}>
-          <Text onPress={onSaved}> Save</Text>
-        </TouchableOpacity> */}
-
+      
       <CustomButton
         text="Save"
         onPress={() => {
@@ -70,13 +66,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     alignContent: "center",
   },
-  round1: {
-    width: 100,
-    height: 30,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 5,
-    borderRadius: 50,
-    backgroundColor: "blue",
-  },
+  
 });

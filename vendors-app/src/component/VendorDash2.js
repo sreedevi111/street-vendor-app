@@ -1,60 +1,33 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-// import MyDrawer from '../storage/VendorDrawer'
-import { SafeAreaProvider } from 'react-native-safe-area-context'
 import MyDrawer from '../storage/VendorDrawer'
 
-const VendorDash2 = (navigation) => {
+const VendorDash2 = () => {
   return (
-    <SafeAreaProvider>
+    <View style = {styles.container}>
       
-        {/* <MyDrawer/>
-        <View style={styles.Button}>
-        <TouchableOpacity style={styles.round1}>
-          <Text> Go Live</Text>
-        </TouchableOpacity>
-        
-        <TouchableOpacity style={styles.round2}>
-          <Text> Add</Text>
-        </TouchableOpacity>
-      </View> */}
-
-<View style={styles.container}>
-  
-       
-       
-       <View style={styles.RectangleShapeView} >
-       <Text>
-    {navigation.getParam('item')}
-    </Text>
-       </View>
-       
-     </View>
-    </SafeAreaProvider>
-    
+      <View style = {styles.header}>
+        <MyDrawer/>
+      <Text style ={styles.title}>My Dashboard</Text>
+      </View>
+      
+    </View>
   )
 }
 
 export default VendorDash2
 
 const styles = StyleSheet.create({
-  container: {
- 
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+  container:{
+backgroundColor: 'red'
   },
- 
-  
-  RectangleShapeView: {
- 
-    marginTop : '30%',
-
-  width: 150*2,
-  height: 130,
-  backgroundColor: '#FFC107'
- 
+  header:{
+    height:80,
+    paddingTop:0,
+    backgroundColor: 'coral'
+  },
+  title:{
+    textAlign: 'center',
+    backgroundColor: 'blue'
   }
-
 })
