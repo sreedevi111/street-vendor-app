@@ -46,7 +46,9 @@ const VendorSignUp = () => {
         // secureTextEntry={true}
       />
       <CustomMap />
-      <CustomButton text="Save" onPress={onSavePressed} />
+      <CustomButton text="Save" onPress={onSavePressed} 
+
+/> 
       {/* <CustomButton
         text="Sign in with Google"
         onPress={onSignInGoogle}
