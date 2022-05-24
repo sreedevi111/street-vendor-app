@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Button } from "react-native";
-import { TouchableOpacity } from "react-native-web";
+import { TouchableOpacity } from "react-native";
 
 const Question = ({ navigation }) => {
   return (
@@ -15,7 +15,7 @@ const Question = ({ navigation }) => {
       <TouchableOpacity>
         <Button
           color="#0000ff"
-          onPress={() => navigation.navigate("HomePage")}
+          onPress={() => navigation.navigate("ConsumerSignUp")}
           title="consumer🚹 "
         />
       </TouchableOpacity>

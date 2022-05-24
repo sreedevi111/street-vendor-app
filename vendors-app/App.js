@@ -1,32 +1,46 @@
-import { NavigationContainer } from "@react-navigation/native";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import SafeAreaView from "react-native-safe-area-view";
+import { NavigationContainer, StackActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Home from "./src/component/Home";
+import Otp from "./src/component/Otp";
+import Gated from "./src/component/Gated";
+import VendorDash1 from "./src/component/VendorDash1";
+import ItemAddList from "./src/component/ItemAddList";
 import Question from "./src/component/Question";
 import VendorSignUp from "./src/component/VendorSignUp";
 import ConsumerSignUp from "./src/component/ConsumerSignUp";
-import HomePage from "./src/component/HomePage";
-import ConsumerProfileScreen from "./src/component/ConsumerProfileScreen";
-
-const Stack = createNativeStackNavigator();
+import ConsumerHomePage from "./src/component/ConsumerHomePage";
+import { Provider } from "react-redux";
+import { Store } from "./src/redux/store";
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          header: () => null,
-        }}
-      >
-        <Stack.Screen name="Question" component={Question} />
+    <Provider store={Store}>
+      <NavigationContainer>
+        {/* <ItemAddList/> */}
 
-        <Stack.Screen name="VendorSignUp" component={VendorSignUp} />
+        <Stack.Navigator
+          initialRouteName="Home"
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Otp" component={Otp} />
+          <Stack.Screen name="Gated" component={Gated} />
+          <Stack.Screen name="Question" component={Question} />
 
-        <Stack.Screen name="HomePage" component={HomePage} />
-        <Stack.Screen
-          name="ConsumerProfileScreen"
-          component={ConsumerProfileScreen}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+          <Stack.Screen name="VendorSignUp" component={VendorSignUp} />
+
+          <Stack.Screen name="ConsumerSignUp" component={ConsumerSignUp} />
+          <Stack.Screen name="VendorDash1" component={VendorDash1} />
+          <Stack.Screen name="ConsumerHomePage" component={ConsumerHomePage} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
 

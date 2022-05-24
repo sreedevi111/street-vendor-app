@@ -4,6 +4,7 @@ import CustomInput from "./CustomInput/CustomInput";
 import CustomButton from "./Customebutton/CustomButton";
 import Logo from '../../assets/Logo.png'
 import { Avatar } from 'react-native-paper'
+import CustomMap from "./CustomeMap/CustomMap";    
 
 const VendorSignUp = () => {
   const [fullName, setFullName] = useState("");
@@ -22,7 +23,7 @@ const VendorSignUp = () => {
   // };
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    // <ScrollView showsVerticalScrollIndicator={false}>
     <View style={styles.body}>
     {/* <Image source={Logo} style={styles.logo} /> */}
     <Avatar.Image source={Logo}/>
@@ -44,7 +45,10 @@ const VendorSignUp = () => {
         setValue={setCity}
         // secureTextEntry={true}
       />
-      <CustomButton text="Save" onPress={onSavePressed} />
+      <CustomMap />
+      <CustomButton text="Save" onPress={onSavePressed} 
+
+/> 
       {/* <CustomButton
         text="Sign in with Google"
         onPress={onSignInGoogle}
@@ -58,7 +62,7 @@ const VendorSignUp = () => {
         fgColor="#4765A9"
       /> */}
     </View>
-    </ScrollView>
+    // </ScrollView>
   );
 };
 
@@ -71,8 +75,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  logo: {
-    width: 100,
-    height: 100,
-  }
+  // logo: {
+  //   width: 100,
+  //   height: 100,
+    
+  // }
 });
