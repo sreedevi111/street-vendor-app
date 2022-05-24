@@ -1,52 +1,53 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Alert, Button } from "react-native";
 import React, { useState } from "react";
 import CustomInput from "./CustomInput";
 import CustomButton from "./Customebutton/CustomButton";
+import db from "../../firebase";
 
 const ItemAddList = ({ navigation }) => {
   const [item, setItem] = useState("");
   const [description, setDescription] = useState("");
   const [unit, setUnit] = useState("");
   const [price, setPrice] = useState("");
-  const [state, setState] = useState({
-    sellingItem: "",
-    sellingUnit: "",
-    sellingPrice: "",
-  });
+  const anotherFunc = (val) =>{
+    setItem('');
+}
 
-  // const onSaved = () => alert(" Item is Saved");
+
   const onSaved = () => {
-    setState({
-      sellingItem: item,
-      sellingUnit: unit,
-      sellingPrice: price,
-    });
+    const usersRef = db.collection("users");
+    usersRef.doc(item).set({ item, unit, price });
+
+    setItem("");
+    setUnit("");
+    setPrice("");
   };
 
   return (
     <View style={styles.body}>
       <Text>Item Add List</Text>
-      <CustomInput placeholder="Item" value={item} setValue={setItem} />
+      <CustomInput placeholder="Item" setValue={(val) => setItem(val)} />
+
       {/* Add photo  */}
+
       <CustomInput
         placeholder="Description"
         onChangeText={(val) => setDescription(val)}
       />
 
-      <CustomInput placeholder="Unit" onChangeText={(val) => setUnit(val)} />
+      <CustomInput placeholder="Unit" setValue={(val) => setUnit(val)} />
 
       <CustomInput
         keyboardType="numeric"
         placeholder="Price per Unit"
-        onChangeText={(val) => setPrice(val)}
+        setValue={(val) => setPrice(val)}
       />
-
-      
       <CustomButton
         text="Save"
         onPress={() => {
-          onSaved;
-          navigation.navigate("VendorDash2", { data: state });
+          onSaved();
+          Alert.alert("Item Saved successfully");
+          navigation.navigate("VendorDash2");
         }}
         bgColor="#E7EAF4"
         fgColor="#4765A9"
@@ -66,5 +67,4 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     alignContent: "center",
   },
-  
 });

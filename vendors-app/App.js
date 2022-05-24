@@ -13,6 +13,7 @@ import VendorSignUp from "./src/component/VendorSignUp";
 import ConsumerSignUp from "./src/component/ConsumerSignUp";
 import VendorDash2 from './src/component/VendorDash2';
 import MyDrawer from './src/storage/VendorDrawer';
+import ButtonDash from './src/component/ButtonDash';
 
 
 
@@ -28,23 +29,21 @@ export default function App() {
        screenOptions={{
          headerShown: false,
        }} >
-          <Stack.Screen name='VendorDash' component={VendorDash1}/>
-          <Stack.Screen name='ItemAddList' component={ItemAddList}/>
-          <Stack.Screen name = 'VendorDash2' component={VendorDash2}/>
+          
         {/* <Stack.Screen name = "Home" component ={Home}/>
          <Stack.Screen name = "Otp" component ={Otp}/>
         
         <Stack.Screen name="Question" component={Question} />
         <Stack.Screen name="VendorSignUp" component={VendorSignUp} />
-         <Stack.Screen name="ConsumerSignUp" component={ConsumerSignUp} />
-        <Stack.Screen name='VendorDash1' component={VendorDash1}/>
-        <Stack.Screen name='VendorDash2' component={VendorDash2}/> */}
+         <Stack.Screen name="ConsumerSignUp" component={ConsumerSignUp} /> */}
+        {/* <Stack.Screen name='VendorDash1' component={VendorDash1}/> */}
+        <Stack.Screen name='ItemAddList' component={ItemAddList}/>
+        <Stack.Screen name ='ButtonDash' component={ButtonDash}/>
+        <Stack.Screen name='VendorDash2' component={VendorDash2}/>
 
       </Stack.Navigator> 
     </NavigationContainer>
-    // <VendorDash1 />
-    // <Question/>
-    // <ItemAddList/>
+   
   );
 }
 

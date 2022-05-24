@@ -1,33 +1,48 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import MyDrawer from '../storage/VendorDrawer'
+import { StyleSheet, Text, View, Switch } from "react-native";
+import React, { useState } from "react";
+// import MyDrawer from '../storage/VendorDrawer'
+import NoteLists from "./NoteList";
+import ButtonDash from "./ButtonDash";
+import { FlatList, ScrollView } from "react-native-gesture-handler";
+import { NavigationContainer } from "@react-navigation/native";
 
-const VendorDash2 = () => {
+const VendorDash2 = ({navigation}) => {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   return (
-    <View style = {styles.container}>
-      
-      <View style = {styles.header}>
-        <MyDrawer/>
-      <Text style ={styles.title}>My Dashboard</Text>
-      </View>
-      
-    </View>
-  )
-}
+    <View style={styles.container}>
+      <View style={styles.header}>
+        {/* <MyDrawer/> */}
+        <Text style={styles.title}>My Dashboard</Text>
 
-export default VendorDash2
+        <NoteLists />
+
+        <ButtonDash/>
+        
+      </View>
+    </View>
+  );
+};
+
+export default VendorDash2;
 
 const styles = StyleSheet.create({
-  container:{
-backgroundColor: 'red'
+  container: {},
+  header: {
+    height: 80,
+    paddingTop: 38,
+    backgroundColor: "coral",
   },
-  header:{
-    height:80,
-    paddingTop:0,
-    backgroundColor: 'coral'
+  title: {
+    textAlign: "center",
   },
-  title:{
-    textAlign: 'center',
-    backgroundColor: 'blue'
-  }
-})
+  // list:{
+  //   backgroundColor: 'pink',
+  //   width: '90%',
+  //   height: 100,
+  //   marginTop: 30,
+  //   marginLeft:8
+
+  // },
+  
+});
