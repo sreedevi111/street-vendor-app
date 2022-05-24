@@ -1,5 +1,11 @@
 import React from "react";
-import { View, TextInput, StyleSheet, SafeAreaView } from "react-native";
+import {
+  View,
+  TextInput,
+  StyleSheet,
+  SafeAreaView,
+  ScrollView,
+} from "react-native";
 
 const CustomInput = ({ value, setValue, placeholder, secureTextEntry }) => {
   return (
@@ -26,9 +32,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     padding: 6,
     marginVertical: 10,
-    
-    
-   
   },
 
   input: {

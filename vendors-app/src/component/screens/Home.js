@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TextInput, SafeAreaView } from "react-native";
 import React, { useEffect } from "react";
 import { Entypo } from "@expo/vector-icons";
 import CustomShop from "./CustomShop";
-import { GetShops } from "../../redux/actions";
+import { GetShops, GET_SHOPS } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { FlatList } from "react-native";
 // import Logo from '../../../assets/Logo.png'
