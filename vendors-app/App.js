@@ -28,9 +28,9 @@ export default function App() {
             headerShown: false,
           }}
         >
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Otp" component={Otp} />
-          <Stack.Screen name="Gated" component={Gated} />
+          {/* <Stack.Screen name="Home" component={Home} /> */}
+          {/* <Stack.Screen name="Otp" component={Otp} /> */}
+          {/* <Stack.Screen name="Gated" component={Gated} /> */}
           <Stack.Screen name="Question" component={Question} />
 
           <Stack.Screen name="VendorSignUp" component={VendorSignUp} />

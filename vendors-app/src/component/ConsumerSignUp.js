@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, View, ScrollView } from "react-native";
-import CustomInput from "./CustomInput/Index";
+// import CustomInput from "./CustomInput/Index";
+import CustomInput from "./CustomInput/CustomInput";
 import CustomButton from "./Customebutton/CustomButton";
 import Logo from "../../assets/Logo.png";
 import { Avatar } from "react-native-paper";
