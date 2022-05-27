@@ -20,6 +20,29 @@ import ConsumerHomePage from './src/component/ConsumerHomePage';
 export default function App() {
   const Stack = createNativeStackNavigator();
   return (
+    // <Provider store={Store}>
+    //   <NavigationContainer>
+    //     {/* <ItemAddList/> */}
+
+    //     <Stack.Navigator
+    //       initialRouteName="Home"
+    //       screenOptions={{
+    //         headerShown: false,
+    //       }}
+    //     >
+    //       {/* <Stack.Screen name="Home" component={Home} /> */}
+    //       {/* <Stack.Screen name="Otp" component={Otp} /> */}
+    //       {/* <Stack.Screen name="Gated" component={Gated} /> */}
+    //       <Stack.Screen name="Question" component={Question} />
+
+    //       <Stack.Screen name="VendorSignUp" component={VendorSignUp} />
+
+    //       <Stack.Screen name="ConsumerSignUp" component={ConsumerSignUp} />
+    //       <Stack.Screen name="VendorDash1" component={VendorDash1} />
+    //       <Stack.Screen name="ConsumerHomePage" component={ConsumerHomePage} />
+    //     </Stack.Navigator>
+    //   </NavigationContainer>
+    // </Provider>
 
     <NavigationContainer >
       

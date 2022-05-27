@@ -1,0 +1,10 @@
+try{
+uv_e("nts");
+
+var uv_sI=function(){};uv_sI.prototype.getTile=function(){return function(){}};uv_sI.prototype.setConfig=function(){};
+uv_U("NTS",function(a){a(new uv_sI)});
+
+uv_f();
+
+}catch(e){_DumpException(e)}
+// Google Inc.
