@@ -9,8 +9,7 @@ import {
 import SafeAreaView from 'react-native-safe-area-view';
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import PhoneInput from "react-native-phone-number-input";
-// import {sendSmsVerification} from "../api/verify"
-import { sendSmsVerification } from '../../api/verify'
+import {sendSmsVerification} from "../../api/verify"
 
 const Home = ({ navigation }) => {
  const [value, setValue] = useState("");
@@ -36,10 +35,12 @@ const Home = ({ navigation }) => {
            onChangeFormattedText={(text) => {
              setFormattedValue(text);
            }}
-          //  countryPickerProps={{ withAlphaFilter: true }}
-          //  withShadow
-          //  autoFocus
+           countryPickerProps={{ withAlphaFilter: true }}
+           withShadow
+           autoFocus
          />
+{/* <PhoneInput/> */}
+
          <TouchableOpacity
            style={styles.button}
            onPress={() => {

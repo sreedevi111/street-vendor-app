@@ -4,7 +4,7 @@ import CustomInput from "./CustomInput/CustomInput";
 import CustomButton from "./Customebutton/CustomButton";
 import Logo from '../../assets/Logo.png'
 import { Avatar } from 'react-native-paper'
-import CustomMap from "./CustomeMap/CustomMap";    
+
 
 const VendorSignUp = () => {
   const [fullName, setFullName] = useState("");
@@ -45,7 +45,7 @@ const VendorSignUp = () => {
         setValue={setCity}
         // secureTextEntry={true}
       />
-      <CustomMap />
+     
       <CustomButton text="Save" onPress={onSavePressed} 
 
 /> 
@@ -75,9 +75,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  // logo: {
-  //   width: 100,
-  //   height: 100,
-    
-  // }
+  
 });
