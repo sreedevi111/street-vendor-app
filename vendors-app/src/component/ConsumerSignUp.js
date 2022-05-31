@@ -4,6 +4,7 @@ import CustomInput from "./CustomInput";
 import CustomButton from "./Customebutton/CustomButton";
 import Logo from "../../assets/Logo.png";
 import { Avatar } from "react-native-paper";
+import CustomMap from "./CustomeMap/CustomMap";
 
 
 const ConsumerSignUp = ({ navigation }) => {
@@ -33,6 +34,7 @@ const ConsumerSignUp = ({ navigation }) => {
         setValue={setCity}
         
       />
+      <CustomMap />
      
       <CustomButton
         text="Save"

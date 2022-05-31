@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, Alert, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
 
 const Question = ({ navigation }) => {
   return (

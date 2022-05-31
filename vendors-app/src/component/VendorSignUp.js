@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, Button, ScrollView, Image } from "react-native";
 import CustomInput from "./CustomInput/CustomInput";
 import CustomButton from "./Customebutton/CustomButton";
+import CustomMap from "./CustomeMap/CustomMap";
 import Logo from '../../assets/Logo.png'
 import { Avatar } from 'react-native-paper'
 
@@ -45,7 +46,7 @@ const VendorSignUp = () => {
         setValue={setCity}
         // secureTextEntry={true}
       />
-     
+     <CustomMap />
       <CustomButton text="Save" onPress={onSavePressed} 
 
 /> 
